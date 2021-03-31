@@ -1,30 +1,46 @@
 <#
 .SYNOPSIS
-    Quick description of this script
+    This script dumps some information that Wade Smith needs to help getting the most of your Exchange / M365 hybrid organization.
 
 .DESCRIPTION
-    Longer description of what this script does
+    This script dumps some information that Wade Smith needs to help getting the most of your Exchange / M365 hybrid organization.
+    You can dump:
+    - Exchange OnPrem related information (general and for Oauth settings checks)
+    - Exchange Online related information (same, general and info for Oauth settings checks)
+    - MSOL information
+    These are necessary to help Wade Smith and his colleagues to help you on challenges you may face on your configuration.
 
-.PARAMETER FirstNumber
-    This parameter does blablabla
+.PARAMETER IncludeUserSpecificInfo
+    This parameter is to execute PowerShell collection commands with specific user, domain and org info
+    Check and change the variables definitions on the script (will introduce GUI on a later version)
 
-.PARAMETER CheckVersion
-    This parameter will just dump the script current version.
+.PARAMETER OnPremExchangeManagementShellCommands
+    This is to collect Exchange OnPrem specific information.
+    Exchange Management Shell tools are needed to be loaded for this, otherwise
+    this will fail data collection.
+
+.PARAMETER OnLineExchangeManagementShellCommands
+    This is to collect Exchange Online specific information.
+    Exchange Online management module needs to be loaded, otherwise
+    this will fail data MS Exchange Online collection.
+
+.PARAMETER MSOLCommands
+    This is to collect MS Online (aka Azure) specific information.
+    MSOnline module must be loaded, otherwise this will fail MSOL data collection
 
 .INPUTS
-    None. You cannot pipe objects to that script.
+    User specific information if you want to use the -IncludeUserSpecificInfo switch
 
 .OUTPUTS
-    None for now
+    Many files (see the $OutputFilesCollection Here-String for file names)
 
 .EXAMPLE
-.\Do-Something.ps1
-This will launch the script and do someting
+Examples to be added later
 
 .EXAMPLE
-.\Do-Something.ps1 -CheckVersion
+.\WadeSmithScript.ps1 -CheckVersion
 This will dump the script name and current version like :
-SCRIPT NAME : Do-Something.ps1
+SCRIPT NAME : WadeSmithScript.ps1
 VERSION : v1.0
 
 .NOTES
