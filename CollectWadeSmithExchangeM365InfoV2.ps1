@@ -127,7 +127,7 @@ Write-Log "************************** Script Start **************************"
 #Collect PowerShell command result in txt files: 
 
 # Variables declaration
-$OutputFilesCollection = @'
+$OutputFilesCollection = @"
 $($env:Userprofile)\Documents\OnPrem_OrgRel.txt
 $($env:Userprofile)\Documents\OnPrem_Test-OrganizationRelationship.txt
 $($env:Userprofile)\Documents\OnPrem_IntraOrgCon.txt
@@ -184,7 +184,7 @@ $($env:Userprofile)\Documents\O365_Mailbox.txt
 $($env:Userprofile)\Documents\Msol_ServicePrincipal.txt
 $($env:Userprofile)\Documents\Msol_ServicePrincipalNames.txt
 $($env:Userprofile)\Documents\Msol_ServicePrincipalCredential.txt
-'@ -split "`n" | ForEach-Object { $_.trim() }
+"@ -split "`n" | ForEach-Object { $_.trim() }
 
 If ($IncludeUserSpecificInfo){
     Write-Log "Including user specific information..."
